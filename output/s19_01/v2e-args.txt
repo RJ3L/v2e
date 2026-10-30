@@ -1,0 +1,89 @@
+
+*** arguments:
+auto_timestamp_resolution:	True
+avi_frame_rate:	30
+batch_size:	8
+crop:	None
+cs_lambda_pixels:	None
+cs_tau_p_ms:	None
+cutoff_hz:	300
+ddd_output:	False
+disable_slomo:	True
+dvs1024:	False
+dvs128:	False
+dvs240:	False
+dvs346:	False
+dvs640:	False
+dvs_aedat2:	None
+dvs_aedat4:	None
+dvs_emulator_seed:	0
+dvs_exposure:	['duration', '0.01']
+dvs_h5:	events.h5
+dvs_params:	None
+dvs_text:	None
+dvs_vid:	dvs-video.avi
+dvs_vid_full_scale:	2
+hdr:	False
+input:	/Users/rlimtin/Documents/GitHub/v2e/input/s19_01
+input_frame_rate:	60.0
+input_slowmotion_factor:	1.0
+label_signal_noise:	False
+leak_jitter_fraction:	0.1
+leak_rate_hz:	0.01
+neg_thres:	0.2
+no_preview:	False
+noise_rate_cov_decades:	0.1
+output_folder:	/Users/rlimtin/Documents/GitHub/v2e/output/s19_01
+output_height:	None
+output_in_place:	False
+output_width:	None
+overwrite:	True
+photoreceptor_noise:	False
+pos_thres:	0.2
+record_single_pixel_states:	None
+refractory_period:	0.0005
+save_dvs_model_state:	False
+scidvs:	False
+shot_noise_rate_hz:	0.001
+show_dvs_model_state:	None
+sigma_thres:	0.03
+skip_video_output:	False
+slomo_model:	/Users/rlimtin/Documents/GitHub/v2e/input/SuperSloMo39.ckpt
+slomo_stats_plot:	False
+start_time:	None
+stop_time:	None
+synthetic_input:	None
+timestamp_resolution:	None
+unique_output_folder:	True
+vid_orig:	video_orig.avi
+vid_slomo:	video_slomo.avi
+
+*** command line:
+ v2e.py -i input/s19_01 --input_frame_rate=60 --disable_slomo --output_folder=output/s19_01 --overwrite --dvs_h5 events.h52026-10-29 14:21:43,603 - __main__ - [1;34mINFO[1;0m - opening video input file /Users/rlimtin/Documents/GitHub/v2e/input/s19_01
+2026-10-29 14:21:43,619 - __main__ - [1;31mWARNING[1;0m - From input frame automatically set DVS output_width=151 and/or output_height=200. This may not be desired behavior. 
+Check DVS camera sizes arguments.
+2026-10-29 14:21:48,626 - __main__ - [1;31mWARNING[1;0m - slomo interpolation disabled by command line option; output DVS timestamps will have source frame interval resolution
+2026-10-29 14:21:48,630 - __main__ - [1;34mINFO[1;0m - Source video /Users/rlimtin/Documents/GitHub/v2e/input/s19_01 has total 1201 frames with total duration 20s. 
+Source video is 60fps with slowmotion_factor 1 (frame interval 16.67ms),
+Will convert 1201 frames 0 to 1200
+(From 0.0s to 20.0s, duration 20.0s)
+2026-10-29 14:21:48,631 - __main__ - [1;34mINFO[1;0m - v2e DVS video will have constant-duration frames 
+at 100fps (accumulation time 10ms), 
+DVS video will have 2000.0 frames with duration 20s and playback duration 66.67s
+
+2026-10-29 14:21:49,539 - __main__ - [1;34mINFO[1;0m - processing frames 0 to 1200 from video input
+2026-10-29 14:21:49,541 - __main__ - [1;34mINFO[1;0m - Input video /Users/rlimtin/Documents/GitHub/v2e/input/s19_01 has W=151 x H=200 frames each with 3 channels
+2026-10-29 14:21:49,541 - __main__ - [1;34mINFO[1;0m - *** Stage 1/3: Resizing 1201 input frames to output size (with possible RGB to luma conversion)
+2026-10-29 14:21:49,553 - __main__ - [1;34mINFO[1;0m - 
+Converting input frames from RGB color to luma
+2026-10-29 14:21:50,189 - __main__ - [1;34mINFO[1;0m - *** Stage 2/3:turning npy frame files to png from /var/folders/pz/50r_sds56mn_mztptklch63h0000gn/T/tmp8erhiwef
+2026-10-29 14:21:50,775 - __main__ - [1;34mINFO[1;0m - *** Stage 3/3: emulating DVS events from 1201 frames
+2026-10-29 14:23:32,967 - __main__ - [1;34mINFO[1;0m - generated total 2.16M events (1.09M on, 1.07M off)
+2026-10-29 14:23:32,968 - __main__ - [1;34mINFO[1;0m - Avg event rate for N=30200 px and total time =20.000 s
+	Total: 107.81kHz (54.30kHz on, 53.52kHz off)
+	Per pixel:  3.57Hz (1.80Hz on, 1.77Hz off)
+2026-10-29 14:23:32,985 - __main__ - [1;34mINFO[1;0m - generating desktop notification
+2026-10-29 14:23:32,987 - __main__ - [1;34mINFO[1;0m - could not show notification: No usable implementation found!
+2026-10-29 14:23:32,987 - __main__ - [1;34mINFO[1;0m - showing /Users/rlimtin/Documents/GitHub/v2e/output/s19_01 in desktop
+2026-10-29 14:23:33,126 - __main__ - [1;34mINFO[1;0m - done processing 2402 frames in 109.36s (21.96fr/s)
+ **************** see output folder /Users/rlimtin/Documents/GitHub/v2e/output/s19_01
